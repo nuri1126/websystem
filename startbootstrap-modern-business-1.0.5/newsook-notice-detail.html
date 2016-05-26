@@ -42,7 +42,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">NewSook</a>
+                <a class="navbar-brand" href="newsook-index.html">NewSook</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -51,7 +51,7 @@
                         <a href="newsook-news-index.html">뉴스</a>
                         </li>
                     <li>
-                        <a href="services.html">공지</a>
+                        <a href="newsook-notice-index.html">공지</a>
                     </li>
                     <li>
                         <a href="newsook-board-index.html">게시판</a>
@@ -167,44 +167,17 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
 
                 <hr>
-
-                <!-- Blog Comments -->
-
-                <!-- Comments Form -->
-
-
-                <hr>
-
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>제목</th>
-                            <th class="if_max">작성자</th>
-                            <th class="if_max">작성일</th>
-                            <th>좋아요</th>
-                        </tr>
-                        </thead>
-
-                        <tbody>
-                          {%for post in posts%}
-                          <tr onClick="location.href='post/{{post.pk}}'" >
-                         <td>{{post.title}}</td>
-                         <td class="if_max">{{post.author.profile.nickname}}</td>
-                         <td class="if_max">{{post.uploaded|truncatewords:1|slice:"-4" }}</td>
-                         <td class="post_{{ post.id }}_like_count">{{ post.like_count }}</td>
-                        </tr>
-                        {% empty %}
-
-                        {% if keyword %}
-                        <p>검색결과가 없습니다</p>
-                        {% else %}
-                        <p>게시물이 없습니다</p>
-                        {% endif %}
-                        {% endfor %}
-                    </tbody>
-                </table>
+                 <!-- Pager -->
+                <div class="row">
+                 <ul class="pager">
+                        <li class="previous"><a href="#">&larr; Older</a>
+                        </li>
+                        <li class="next"><a href="#">Newer &rarr;</a>
+                        </li>
+                    </ul>
                 </div>
+                <!-- /.row -->
+                <hr>
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
